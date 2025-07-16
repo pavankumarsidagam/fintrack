@@ -54,7 +54,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+]
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from .models.category import Category
 from .serializers.category_serializer import CategorySerializer
 
-def get_categories(reuest):
+def get_categories(request):
     categories = Category.objects()
     serialized = [CategorySerializer(cat).data() for cat in categories]
     return JsonResponse(serialized, safe=False)
