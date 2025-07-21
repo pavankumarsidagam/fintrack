@@ -60,6 +60,15 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
 ]
 
+JWT_SECRET = 'fintrack.apisecretkey' 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'fintrack.authentication.NodeJWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 TEMPLATES = [
     {
